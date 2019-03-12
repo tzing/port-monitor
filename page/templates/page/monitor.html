@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans 'Telnet Monitor' %}{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/site.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'page/nav.html' %}
+
+<div class="container">
+    {% for target in targets %}
+    <div class="card" data-hostname="{{ target.hostname }}" data-port="{{ target.port }}">
+        <div class="card-header">
+            {{ target.hostname }}
+            <small class="text-muted">:{{ target.port }}</small>
+        </div>
+        <div class="card-body text-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush">
+        </ul>
+    </div>
+    {% endfor %}
+
+    <dl class="row">
+        <dt class="col-sm-4 col-md-3">{% trans 'Current time' %}</dt>
+        <dd class="col-sm-8 col-md-9" id="current-time">--</dd>
+
+        <dt class="col-sm-4 col-md-3">{% trans 'Last query time' %}</dt>
+        <dd class="col-sm-8 col-md-9" id="last-query">--</dd>
+
+        <dt class="col-sm-4 col-md-3">{% trans 'Next query time' %}</dt>
+        <dd class="col-sm-8 col-md-9" id="next-query">--</dd>
+    </dl>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    var query_interval = {{ setting.query_interval }};
+</script>
+<script src="{% static 'js/query.js' %}"></script>
+{% endblock %}
