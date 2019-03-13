@@ -44,6 +44,7 @@
 {% block js %}
 <script>
     var query_interval = {{ setting.query_interval }};
+    var timeout = {{ setting.timeout }};
 </script>
 <script src="{% static 'js/query.js' %}"></script>
 {% endblock %}

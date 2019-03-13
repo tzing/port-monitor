@@ -83,7 +83,7 @@ $.when.apply($, initialize_events).done(function () {
             var address = jElem.data('address');
             var port = jElem.parents('.card').data('port');
 
-            var get = $.get('/api/telnet/', { host: address, port: port })
+            var get = $.get('/api/telnet/', { host: address, port: port, timeout: timeout })
                 .done(function (data) {
                     if (data.status === 'success') {
                         jElem.removeClass()

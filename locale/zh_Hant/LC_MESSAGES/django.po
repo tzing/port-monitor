@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-12 19:30+0800\n"
+"POT-Creation-Date: 2019-03-13 09:49+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,15 @@ msgstr "查詢間隔"
 msgid "Fire a query every N second to check if addresses are still alive"
 msgstr "每N秒啟動一次檢查，以確認各目標地址仍然有效"
 
-#: page/models.py:34 page/models.py:35
+#: page/models.py:26
+msgid "Timeout (seconds)"
+msgstr "超時設定 (秒)"
+
+#: page/models.py:27
+msgid "Abort connection after the configured time"
+msgstr "當連線時間超過指定秒數而未回應，視為無法連線"
+
+#: page/models.py:39 page/models.py:40
 msgid "Settings"
 msgstr "設定"
 

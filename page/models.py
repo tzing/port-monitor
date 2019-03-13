@@ -22,6 +22,11 @@ class Setting(models.Model):
         ),
         default=300)
 
+    timeout = models.PositiveIntegerField(
+        verbose_name=_('Timeout (seconds)'),
+        help_text=_('Abort connection after the configured time'),
+        default=10)
+
     def __str__(self):
         return 'Settings (only)'
 
