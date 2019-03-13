@@ -13,7 +13,7 @@ def resolve(request):
         return JsonResponse({
             'status': 'fail',
             'reason': 'hostname not provided',
-        })
+        }, status=400) # yapf: disable
 
     hostname = request.GET['host']
 
@@ -29,7 +29,7 @@ def resolve(request):
             'status': 'fail',
             'hostname': hostname,
             'reason': 'no answer',
-        })
+        }, status=404) # yapf: disable
 
     return JsonResponse({
         'status': 'success',
@@ -45,7 +45,7 @@ def telnet(request):
         return JsonResponse({
             'status': 'fail',
             'reason': 'hostname not provided',
-        })
+        }, status=400) # yapf: disable
 
     hostname = request.GET['host']
     port = request.GET.get('port', 23)
@@ -66,14 +66,14 @@ def telnet(request):
             'hostname': hostname,
             'port': port,
             'reason': 'time out',
-        })
+        }, status=408) # yapf: disable
     except ConnectionRefusedError:
         return JsonResponse({
             'status': 'fail',
             'hostname': hostname,
             'port': port,
             'reason': 'connection refused',
-        })
+        }, status=403) # yapf: disable
 
     return JsonResponse({
         'status': 'success',

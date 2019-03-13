@@ -6,16 +6,18 @@ function register_address(jElem, addresses, defer) {
     var group = jElem.find('.list-group');
     $.each(addresses, function (i, addr) {
         var badge = $('<span></span>')
-            .addClass('status')
-            .addClass('badge')
-            .addClass('badge-secondary')
+            .addClass('status badge badge-secondary')
             .text(gettext('Unknown'))
             .data('address', addr);
+
+        var message = $('<small></small>')
+            .addClass('message');
 
         var item = $('<li></li>')
             .addClass('list-group-item')
             .append(badge)
-            .append(addr);
+            .append(addr)
+            .append(message);
 
         group.append(item);
     });
@@ -45,8 +47,12 @@ $('.card').each(function (idx, elem) {
             register_address(jElem, data.address, defer)
         })
         .fail(function (resp) {
+            jElem
+                .addClass('text-white bg-danger')
+                .find('.card-body')
+                .text(gettext('Failed to resolve'));
             console.log('Failed to query ' + hostname);
-            console.log(resp)
+            console.log(resp.responseJSON);
         });
 });
 
@@ -75,39 +81,30 @@ $.when.apply($, initialize_events).done(function () {
         $('.status').each(function (idx, elem) {
             var jElem = $(elem);
             jElem.removeClass()
-                .addClass('status')
-                .addClass('badge')
-                .addClass('badge-warning')
-                .text(gettext('Checking'))
+                .addClass('status badge badge-warning')
+                .text(gettext('Checking'));
+            jElem.parents('li')
+                .children('small')
+                .text();
 
             var address = jElem.data('address');
             var port = jElem.parents('.card').data('port');
 
-            var get = $.get('/api/telnet/', { host: address, port: port, timeout: timeout })
+            $.get('/api/telnet/', { host: address, port: port, timeout: timeout })
                 .done(function (data) {
-                    if (data.status === 'success') {
-                        jElem.removeClass()
-                            .addClass('status')
-                            .addClass('badge')
-                            .addClass('badge-success')
-                            .text(gettext('Alive'))
-                    } else {
-                        jElem.removeClass()
-                            .addClass('status')
-                            .addClass('badge')
-                            .addClass('badge-danger')
-                            .text(gettext('Dead'));
-                    }
+                    jElem.removeClass()
+                        .addClass('status badge badge-success')
+                        .text(gettext('Alive'))
                 })
                 .fail(function (resp) {
+                    jElem.removeClass()
+                        .addClass('status badge badge-danger')
+                        .text(gettext('Error'));
+                    jElem.parents('li')
+                        .children('small')
+                        .text(resp.responseJSON.reason);
                     console.log('Failed to query ' + address);
                     console.log(resp);
-                    jElem.removeClass()
-                        .addClass('status')
-                        .addClass('badge')
-                        .addClass('badge-dark')
-                        .text(gettext('Error'));
-
                 });;
 
         });

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-13 09:49+0800\n"
+"POT-Creation-Date: 2019-03-13 10:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,15 +62,19 @@ msgstr "設定"
 msgid "Telnet Monitor"
 msgstr "Telnet監控台"
 
-#: page/templates/page/monitor.html:32
+#: page/templates/page/monitor.html:30
+msgid "No configured monitor target."
+msgstr "沒有設定監視目標"
+
+#: page/templates/page/monitor.html:34
 msgid "Current time"
 msgstr "現在時間"
 
-#: page/templates/page/monitor.html:35
+#: page/templates/page/monitor.html:37
 msgid "Last query time"
 msgstr "最後查詢時間"
 
-#: page/templates/page/monitor.html:38
+#: page/templates/page/monitor.html:40
 msgid "Next query time"
 msgstr "下次查詢時間"
 

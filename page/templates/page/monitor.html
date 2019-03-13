@@ -26,6 +26,8 @@
         <ul class="list-group list-group-flush">
         </ul>
     </div>
+    {% empty %}
+    <p>{% trans 'No configured monitor target.' %}</p>
     {% endfor %}
 
     <dl class="row">
