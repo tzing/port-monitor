@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-13 10:32+0800\n"
+"POT-Creation-Date: 2019-03-15 13:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: static/js/query.js:10
+#: telnet_monitor/static/js/query.js:10
 msgid "Unknown"
 msgstr "狀態未知"
 
-#: static/js/query.js:53
+#: telnet_monitor/static/js/query.js:53
 msgid "Failed to resolve"
 msgstr "無法解析域名"
 
-#: static/js/query.js:68
+#: telnet_monitor/static/js/query.js:68
 #, javascript-format
 msgid "%s (%s seconds later)"
 msgstr "%s (%s秒後)"
 
-#: static/js/query.js:85
+#: telnet_monitor/static/js/query.js:85
 msgid "Checking"
 msgstr "檢查中"
 
-#: static/js/query.js:97
+#: telnet_monitor/static/js/query.js:97
 msgid "Alive"
 msgstr "正常"
 
-#: static/js/query.js:102
+#: telnet_monitor/static/js/query.js:102
 msgid "Error"
 msgstr "錯誤"

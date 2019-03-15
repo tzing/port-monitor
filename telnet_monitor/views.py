@@ -1,9 +1,28 @@
 import telnetlib
 import socket
 
-from django.conf import settings
 from django.http import JsonResponse
+from django.shortcuts import render
 from dns.resolver import Resolver, NoAnswer
+
+from . import models
+from . import settings
+
+
+def index(request):
+    context = {
+        'targets': models.MonitorTarget.objects.all(),
+    }
+
+    conf_for_template = [
+        'query_interval',
+        'timeout',
+    ]
+
+    for conf in conf_for_template:
+        context[conf] = getattr(settings, conf.upper())
+
+    return render(request, 'telnet_monitor/monitor.html', context)
 
 
 def resolve(request):
@@ -52,7 +71,7 @@ def telnet(request):
     if isinstance(port, str):
         port = int(port)
 
-    timeout = request.GET.get('timeout', 10)
+    timeout = request.GET.get('timeout', settings.TIMEOUT)
     if isinstance(timeout, str):
         timeout = int(timeout)
 

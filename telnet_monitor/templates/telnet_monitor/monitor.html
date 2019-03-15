@@ -1,15 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'telnet_monitor/base.html' %}
 {% load i18n %}
 {% load static %}
 
 {% block title %}{% trans 'Telnet Monitor' %}{% endblock %}
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/site.css' %}">
-{% endblock %}
-
 {% block content %}
-{% include 'page/nav.html' %}
+{% include 'telnet_monitor/nav.html' %}
 
 <div class="container">
     {% for target in targets %}
@@ -41,12 +37,4 @@
         <dd class="col-sm-8 col-md-9" id="next-query">--</dd>
     </dl>
 </div>
-{% endblock %}
-
-{% block js %}
-<script>
-    var query_interval = {{ setting.query_interval }};
-    var timeout = {{ setting.timeout }};
-</script>
-<script src="{% static 'js/query.js' %}"></script>
 {% endblock %}
