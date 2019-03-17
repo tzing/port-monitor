@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-15 14:00+0800\n"
+"POT-Creation-Date: 2019-03-17 23:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,14 +37,10 @@ msgid "No configured monitor target."
 msgstr "沒有設定監視目標"
 
 #: telnet_monitor/templates/telnet_monitor/monitor.html:30
-msgid "Current time"
-msgstr "現在時間"
-
-#: telnet_monitor/templates/telnet_monitor/monitor.html:33
 msgid "Last query time"
 msgstr "最後查詢時間"
 
-#: telnet_monitor/templates/telnet_monitor/monitor.html:36
+#: telnet_monitor/templates/telnet_monitor/monitor.html:33
 msgid "Next query time"
 msgstr "下次查詢時間"
 

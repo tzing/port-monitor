@@ -17,6 +17,9 @@ def index(request):
     conf_for_template = [
         'query_interval',
         'timeout',
+        'dns_ttl',
+        'highlight_row',
+        'js_time_format',
     ]
 
     for conf in conf_for_template:

@@ -2,9 +2,12 @@
 <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static '/js/popper.min.js' %}"></script>
 <script src="{% static '/js/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/strftime.js' %}"></script>
 <script src="{% url 'telnet_monitor:javascript-catalog' %}"></script>
 <script>
     var query_interval = {{ query_interval }};
     var timeout = {{ timeout }};
+    var highlight_row = {{ highlight_row | lower }};
+    var timeformat = "{{ js_time_format | safe }}";
 </script>
 <script src="{% static 'js/query.js' %}"></script>
