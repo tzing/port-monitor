@@ -4,7 +4,7 @@ TIMEOUT = getattr(settings, 'TIMEOUT', 30)
 """Time out setting to each query.
 """
 
-DNS_SERVER = getattr(settings, 'DNS_TTL', [
+DNS_SERVER = getattr(settings, 'DNS_SERVER', [
     '1.1.1.1',
     '1.0.0.1',
 ])

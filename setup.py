@@ -19,6 +19,7 @@ setup(
     packages=['telnet_monitor'],
     package_data={
         'telnet_monitor': [
+            'migrations/*.py',
             'static/**/*',
             'templates/telnet_monitor/*.html',
             'locale/**/*.mo',
