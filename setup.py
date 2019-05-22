@@ -22,7 +22,7 @@ setup(
             'migrations/*.py',
             'static/**/*',
             'templates/port_monitor/*.html',
-            'locale/**/*.mo',
+            'locale/*/LC_MESSAGES/*.mo',
         ]
     },
     classifiers=[
