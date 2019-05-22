@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-22 12:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: port_monitor/apps.py:7 port_monitor/templates/port_monitor/monitor.html:5
+#: port_monitor/templates/port_monitor/nav.html:3
+msgid "Port Monitor"
+msgstr "連線監控台"
+
+#: port_monitor/models.py:10
+msgid "Hostname"
+msgstr "主機名稱（hostname）"
+
+#: port_monitor/models.py:15
+msgid "Port"
+msgstr "通訊埠（port）"
+
+#: port_monitor/models.py:20
+msgid "Order"
+msgstr "排序"
+
+#: port_monitor/models.py:22
+msgid "It will be shown in the upper position if the number is higher."
+msgstr "數字愈高，排序愈上方。"
+
+#: port_monitor/models.py:26
+msgid "Monitor target"
+msgstr "監控目標"
+
+#: port_monitor/models.py:27
+msgid "Monitor targets"
+msgstr "監控目標"
+
+#: port_monitor/templates/port_monitor/config.html:7
+msgid "Configuration"
+msgstr "配置"
+
+#: port_monitor/templates/port_monitor/config.html:13
+msgid ""
+"To change the these parameters, edit in\n"
+"                    <code>settings.py</code>."
+msgstr "修改以下參數需直接寫入<code>settings.py</code>。"
+
+#: port_monitor/templates/port_monitor/config.html:17
+msgid "DNS"
+msgstr "域名伺服器"
+
+#: port_monitor/templates/port_monitor/config.html:22
+msgid "DNS TTL"
+msgstr "域名存活時間"
+
+#: port_monitor/templates/port_monitor/config.html:23
+#: port_monitor/templates/port_monitor/config.html:26
+#: port_monitor/templates/port_monitor/config.html:29
+msgid "sec"
+msgstr "秒"
+
+#: port_monitor/templates/port_monitor/config.html:25
+msgid "Query Interval"
+msgstr "查詢間隔"
+
+#: port_monitor/templates/port_monitor/config.html:28
+msgid "Query Timeout"
+msgstr "查詢逾時"
+
+#: port_monitor/templates/port_monitor/config.html:35
+msgid "Close"
+msgstr "關閉"
+
+#: port_monitor/templates/port_monitor/monitor.html:26
+msgid "No configured monitor target."
+msgstr "未指定監控目標。"
+
+#: port_monitor/templates/port_monitor/monitor.html:30
+msgid "Last query time"
+msgstr "最後查詢時間"
+
+#: port_monitor/templates/port_monitor/monitor.html:33
+msgid "Next query time"
+msgstr "下次查詢時間"
+
+#: port_monitor/templates/port_monitor/nav.html:13
+msgid "Config"
+msgstr "配置"
+
+#: port_monitor/templates/port_monitor/nav.html:16
+msgid "Admin"
+msgstr "控制台"

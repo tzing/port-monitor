@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-17 23:53+0800\n"
+"POT-Creation-Date: 2019-05-22 10:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +16,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: telnet_monitor/static/js/query.js:62
-msgid "Failed to resolve"
-msgstr "無法解析域名"
-
-#: telnet_monitor/static/js/query.js:87
-msgid "Unknown"
-msgstr "狀態未知"
-
-#: telnet_monitor/static/js/query.js:107
-#, javascript-format
-msgid "%s (%s seconds later)"
-msgstr "%s (%s秒後)"
-
-#: telnet_monitor/static/js/query.js:124
-msgid "Checking"
-msgstr "檢查中"
-
-#: telnet_monitor/static/js/query.js:134
-msgid "Up"
-msgstr "連線正常"
-
-#: telnet_monitor/static/js/query.js:146
+#: port_monitor/static/js/query.js:64 port_monitor/static/js/query.js:140
 msgid "Query server is offline"
 msgstr "中端查詢主機異常"
 
-#: telnet_monitor/static/js/query.js:152
+#: port_monitor/static/js/query.js:69
+#, javascript-format
+msgid "Failed to be resolved: %s"
+msgstr "無法解析域名：%s"
+
+#: port_monitor/static/js/query.js:95
+msgid "Unknown"
+msgstr "狀態未知"
+
+#: port_monitor/static/js/query.js:117
+msgid "Checking"
+msgstr "檢查中"
+
+#: port_monitor/static/js/query.js:131
+msgid "Up"
+msgstr "連線正常"
+
+#: port_monitor/static/js/query.js:146
 msgid "Down"
 msgstr "無法連線"

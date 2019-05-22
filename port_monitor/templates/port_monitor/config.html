@@ -1,0 +1,39 @@
+{% load i18n %}
+<div class="modal fade" id="configModal" tabindex="-1" role="dialog" aria-labelledby="configModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans 'Configuration' %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{% blocktrans %}To change the these parameters, edit in
+                    <code>settings.py</code>.{% endblocktrans %}</p>
+
+                <dl class="row">
+                    <dt class="col-sm-4">{% trans 'DNS' %}</dt>
+                    <dd class="col-sm-8">{% for addr in dns_server %}
+                        {{ addr }}{% if not forloop.last %}<br>{% endif %}
+                        {% endfor %}</dd>
+
+                    <dt class="col-sm-4">{% trans 'DNS TTL' %}</dt>
+                    <dd class="col-sm-8">{{ dns_ttl }} {% trans 'sec' %}</dd>
+
+                    <dt class="col-sm-4">{% trans 'Query Interval' %}</dt>
+                    <dd class="col-sm-8">{{ query_interval }} {% trans 'sec' %}</dd>
+
+                    <dt class="col-sm-4">{% trans 'Query Timeout' %}</dt>
+                    <dd class="col-sm-8">{{ timeout }} {% trans 'sec' %}</dd>
+
+                </dl>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
+            </div>
+        </div>
+    </div>
+</div>

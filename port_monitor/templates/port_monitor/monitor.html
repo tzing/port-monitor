@@ -1,15 +1,15 @@
-{% extends 'telnet_monitor/base.html' %}
+{% extends 'port_monitor/base.html' %}
 {% load i18n %}
 {% load static %}
 
-{% block title %}{% trans 'Telnet Monitor' %}{% endblock %}
+{% block title %}{% trans 'Port Monitor' %}{% endblock %}
 
 {% block content %}
-{% include 'telnet_monitor/nav.html' %}
+{% include 'port_monitor/nav.html' %}
 
 <div class="container">
     {% for target in targets %}
-    <div class="card" data-hostname="{{ target.hostname }}" data-port="{{ target.port }}">
+    <div class="card target-card" data-hostname="{{ target.hostname }}" data-port="{{ target.port }}">
         <div class="card-header">
             {{ target.hostname }}
             <small class="text-muted">:{{ target.port }}</small>
@@ -34,4 +34,6 @@
         <dd class="col-sm-8 col-md-9" id="next-query">--</dd>
     </dl>
 </div>
+
+{% include 'port_monitor/config.html' %}
 {% endblock %}

@@ -1,0 +1,66 @@
+{% load static %}
+<script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static '/js/popper.min.js' %}"></script>
+<script src="{% static '/js/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/strftime.js' %}"></script>
+<script src="{% static '/js/query.js' %}"></script>
+<script src="{% url 'port_monitor:javascript-catalog' %}"></script>
+<script>
+    'use strict';
+
+    // global variables for port monitor program
+    var g_port_monitor = {
+        ajax: {
+            dns_resolve: "{% url 'port_monitor:api:resolve' %}",
+            check_connection: "{% url 'port_monitor:api:test' %}"
+        },
+        format: {
+            highlight_row: "{{ highlight_row }}" === "True",
+            time_format: "{{ js_time_format | safe }}"
+        },
+        const: {
+            query_interval: parseFloat("{{ query_interval }}"),
+            dns_ttl: parseFloat("{{ dns_ttl }}")
+        }
+    };
+
+    function check_connection() {
+        // update last query time
+        $('#last-query').text(strftime(g_port_monitor.format.time_format, new Date()));
+        $('#next-query').text('--');
+
+        // trigger checking
+        var checking_defer = []
+        $('.address').each(function () {
+            var d = $.Deferred();
+            checking_defer.push(d);
+            $(this).checkConnection({
+                defer: d
+            });
+        })
+
+        // setup next query
+        $.when.apply($, checking_defer).done(function () {
+            var now = new Date();
+            var next_query_time = new Date(now.getTime() + g_port_monitor.const.query_interval * 1000);
+
+            $('#next-query').text(strftime(g_port_monitor.format.time_format, next_query_time));
+            setTimeout(check_connection, g_port_monitor.const.query_interval * 1000);
+        });
+    }
+
+    $(document).ready(function () {
+        var resolve_defer = []
+        $('.target-card').each(function () {
+            var d = $.Deferred();
+            resolve_defer.push(d);
+            return $(this).resolveDNS({
+                defer: d
+            });
+        });
+
+        $.when.apply($, resolve_defer).done(check_connection);
+        setInterval($.resolveDNS, g_port_monitor.const.dns_ttl * 1000);
+    });
+
+</script>

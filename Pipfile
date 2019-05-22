@@ -6,10 +6,8 @@ verify_ssl = true
 [dev-packages]
 yapf = "*"
 ipython = "*"
-pyinstaller = "*"
-setuptools-git-version = "*"
+setuptools-git-version = {editable = true,git = "https://github.com/pyfidelity/setuptools-git-version.git"}
 
 [packages]
 dnspython = "*"
 django = "*"
-setuptools-git-version = {editable = true,git = "https://github.com/pyfidelity/setuptools-git-version.git"}

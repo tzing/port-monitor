@@ -6,5 +6,5 @@ app_name = 'api'
 
 urlpatterns = [
     path('resolve/', views.resolve, name='resolve'),
-    path('telnet/', views.telnet, name='telnet'),
+    path('test/', views.check_connection, name='test'),
 ]

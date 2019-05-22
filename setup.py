@@ -3,10 +3,10 @@ import os
 from setuptools import setup
 
 setup(
-    name='telnet_monitor',
+    name='port_monitor',
     version_format='{tag}.dev{commitcount}+{gitsha}',
     author='tzing',
-    url='https://github.com/tzing/telnet-monitor',
+    url='https://github.com/tzing/port-monitor',
     license='MIT',
     python_requires='>=3.6',
     install_requires=[
@@ -16,12 +16,12 @@ setup(
     setup_requires=[
         'setuptools-git-version',
     ],
-    packages=['telnet_monitor'],
+    packages=['port_monitor'],
     package_data={
-        'telnet_monitor': [
+        'port_monitor': [
             'migrations/*.py',
             'static/**/*',
-            'templates/telnet_monitor/*.html',
+            'templates/port_monitor/*.html',
             'locale/**/*.mo',
         ]
     },
