@@ -120,6 +120,6 @@ def check_connection(request):
                 'status': 'fail',
                 'hostname': host,
                 'port': port,
-                'reason': const.socket_error_code[errno],
+                'reason': const.socket_error_code.get(errno, f'Unknown error code {errno}'),
             },
             status=400)
