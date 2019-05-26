@@ -11,8 +11,13 @@
     {% for target in targets %}
     <div class="card target-card" data-hostname="{{ target.hostname }}" data-port="{{ target.port }}">
         <div class="card-header">
+            {% if target.alias %}
+            {{ target.alias }}
+            <small class="text-muted">{{ target.hostname }}:{{ target.port }}</small>
+            {% else %}
             {{ target.hostname }}
             <small class="text-muted">:{{ target.port }}</small>
+            {% endif %}
         </div>
         <div class="card-body text-center">
             <div class="spinner-border" role="status">

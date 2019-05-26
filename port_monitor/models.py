@@ -15,6 +15,14 @@ class MonitorTarget(models.Model):
         verbose_name=_('Port'),
     )
 
+    alias = models.CharField(
+        max_length=256,
+        verbose_name=_('Alias'),
+        null=True,
+        blank=True,
+        help_text=_('A recognizable name to be displayed on info card.'),
+    )
+
     order = models.IntegerField(
         default=-1,
         verbose_name=_('Order'),
@@ -27,4 +35,11 @@ class MonitorTarget(models.Model):
         verbose_name_plural = _('Monitor targets')
 
     def __str__(self):
+        if self.alias:
+            return f'{self.hostname} :{self.port} ({self.alias})'
         return f'{self.hostname} :{self.port}'
+
+    def save(self, *args, **kwargs):
+        if not self.alias:
+            self.alias = None
+        super().save(*args, **kwargs)

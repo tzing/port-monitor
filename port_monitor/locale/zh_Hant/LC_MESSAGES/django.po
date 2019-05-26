@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-22 12:15+0800\n"
+"POT-Creation-Date: 2019-05-26 22:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,18 +31,26 @@ msgid "Port"
 msgstr "通訊埠（port）"
 
 #: port_monitor/models.py:20
+msgid "Alias"
+msgstr "別名"
+
+#: port_monitor/models.py:23
+msgid "A recognizable name to be displayed on info card."
+msgstr "顯示於資訊卡上的別稱"
+
+#: port_monitor/models.py:28
 msgid "Order"
 msgstr "排序"
 
-#: port_monitor/models.py:22
+#: port_monitor/models.py:30
 msgid "It will be shown in the upper position if the number is higher."
 msgstr "數字愈高，排序愈上方。"
 
-#: port_monitor/models.py:26
+#: port_monitor/models.py:34
 msgid "Monitor target"
 msgstr "監控目標"
 
-#: port_monitor/models.py:27
+#: port_monitor/models.py:35
 msgid "Monitor targets"
 msgstr "監控目標"
 
@@ -82,15 +90,15 @@ msgstr "查詢逾時"
 msgid "Close"
 msgstr "關閉"
 
-#: port_monitor/templates/port_monitor/monitor.html:26
+#: port_monitor/templates/port_monitor/monitor.html:31
 msgid "No configured monitor target."
 msgstr "未指定監控目標。"
 
-#: port_monitor/templates/port_monitor/monitor.html:30
+#: port_monitor/templates/port_monitor/monitor.html:35
 msgid "Last query time"
 msgstr "最後查詢時間"
 
-#: port_monitor/templates/port_monitor/monitor.html:33
+#: port_monitor/templates/port_monitor/monitor.html:38
 msgid "Next query time"
 msgstr "下次查詢時間"
 
